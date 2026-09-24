@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flot — Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================================================================
+       LE STUDIO (mode édition)
+       ================================================================== -->
+  <div id="studio">
+
+    <header id="barre-outils">
+      <div class="barre-outils-groupe">
+        <button id="btn-ajouter-piece" title="Ajouter une pièce">+ Pièce</button>
+        <button id="btn-ajouter-objet" title="Ajouter un objet dans la pièce sélectionnée">+ Objet</button>
+        <button id="btn-ajouter-personnage" title="Ajouter un personnage dans la pièce sélectionnée">+ Personnage</button>
+        <button id="btn-relier" title="Cliquer sur deux pièces pour les relier">Relier deux pièces</button>
+        <button id="btn-supprimer" title="Supprimer l'élément sélectionné">Supprimer</button>
+      </div>
+      <div class="barre-outils-groupe">
+        <button id="btn-sauvegarder" class="bouton-sauvegarde" title="Écrit directement dans data/monde-exemple.js (nécessite lancer-studio.bat)">💾 Sauvegarder</button>
+        <button id="btn-exporter" title="Télécharger monde.json">Exporter</button>
+        <button id="btn-importer" title="Recharger un fichier monde.json">Importer</button>
+        <input type="file" id="input-importer" accept="application/json" hidden>
+        <button id="btn-reinitialiser" title="Revenir au monde d'exemple">Réinitialiser l'exemple</button>
+      </div>
+      <div class="barre-outils-titre">
+        <span>Flot — Studio</span>
+      </div>
+      <div class="barre-outils-groupe">
+        <button id="btn-play" class="bouton-play" title="Tester le jeu">▶ PLAY</button>
+      </div>
+    </header>
+
+    <div id="bandeau-messages" class="cache"></div>
+
+    <div id="zone-principale">
+      <div id="plan-scroll">
+        <div id="plan-conteneur">
+          <svg id="svg-passages"></svg>
+          <!-- les pièces sont injectées ici par studio.js -->
+        </div>
+      </div>
+
+      <aside id="panneau-edition">
+        <!-- le contenu du panneau est injecté par studio.js selon la sélection -->
+      </aside>
+    </div>
+
+  </div>
+
+  <!-- ==================================================================
+       LE MODE JEU (Play) — par-dessus le studio
+       ================================================================== -->
+  <div id="mode-jeu-overlay" class="cache">
+    <button id="btn-retour-studio" class="mj-retour-fixe" title="Retour au studio">← Retour au studio</button>
+    <div id="mode-jeu-conteneur"></div>
+  </div>
+
+  <script src="data/monde-exemple.js"></script>
+  <script src="engine.js"></script>
+  <script src="studio.js"></script>
+</body>
+</html>
