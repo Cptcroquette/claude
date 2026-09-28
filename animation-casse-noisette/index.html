@@ -2,20 +2,22 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Le Casse-Noisette — ouverture</title>
+<title>Le Casse-Noisette — teaser</title>
 <link rel="stylesheet" href="fonts.css">
 <style>
-  html, body { margin: 0; height: 100%; background: #0d0512; overflow: hidden; }
+  html, body { margin: 0; height: 100%; background: #0b0310; overflow: hidden; }
   canvas {
     position: absolute; inset: 0; margin: auto; display: block;
-    width: 100vw; height: 56.25vw; max-height: 100vh; max-width: 177.78vh;
+    height: 100vh; width: 56.25vh; max-width: 100vw; max-height: 177.78vw;
   }
   #hud { position: fixed; left: 12px; bottom: 10px; color: #f29df3; font: 13px monospace; opacity: .6; }
 </style>
 </head>
 <body>
-<canvas id="c" width="1920" height="1080"></canvas>
-<div id="hud">clic = rejouer</div>
+<canvas id="c" width="1080" height="1920"></canvas>
+<audio id="son" src="export/bande-son.wav" preload="auto"></audio>
+<div id="hud">clic = lancer / rejouer (avec le son)</div>
+<script src="assets/points.js"></script>
 <script src="animation.js"></script>
 </body>
 </html>
